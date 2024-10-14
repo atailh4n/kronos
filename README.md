@@ -21,7 +21,7 @@ uygulamayı kolaylaştırmayı hedefler. Proje halen geliştirilme aşamasındad
 2. **Projenin Klonlanması:**
    Terminal veya komut istemcisi kullanarak projeyi klonlayın:
    ```bash
-   git clone https://github.com/kullaniciadi/kronos.git
+   git clone https://github.com/atailh4n/kronos.git
    ```
 3. **Proje Dizini:**
    Proje dizinine geçin
