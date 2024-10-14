@@ -36,8 +36,7 @@ uygulamayı kolaylaştırmayı hedefler. Proje halen geliştirilme aşamasındad
 Kronos dilinde yazılmış bir kodu çalıştırmak için, bir .krnos dosyası oluşturun ve örnek kodu yazın:
 
   ```krnos
-  LogFactory.Log(1234); //Loglama
-  Test(1234); //Herhangi bir fonksiyon
+  LogFactory.Log(1234);
   ```
 
 Bu kodu çalıştırmak için buildden sonra aşağıdaki komutu kullanın:

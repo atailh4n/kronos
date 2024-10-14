@@ -37,19 +37,16 @@ public class Lexer {
             if (currentChar == '.') {
                 tokens.add(new Token(Token.TokenType.DOT, "."));
                 position++;
-                continue;
             }
 
             else if (currentChar == '(') {
                 tokens.add(new Token(Token.TokenType.LPAREN, "("));
                 position++;
-                continue;
             }
 
             else if (currentChar == ')') {
                 tokens.add(new Token(Token.TokenType.RPAREN, ")"));
                 position++;
-                continue;
             }
 
             else if (Character.isDigit(currentChar)) {
@@ -59,13 +56,11 @@ public class Lexer {
                     position++;
                 }
                 tokens.add(new Token(Token.TokenType.NUMBER, number.toString()));
-                continue;
             }
 
             else if (currentChar == ';') {
                 tokens.add(new Token(Token.TokenType.SEMICOLON, ";"));
                 position++;
-                continue;
             }
 
             else {

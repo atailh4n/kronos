@@ -7,8 +7,7 @@ import parser.NumberNode;
 
 public class Interpreter {
     public void interpret(ASTNode node) {
-        if (node instanceof FunctionCall) {
-            FunctionCall func = (FunctionCall) node;
+        if (node instanceof FunctionCall func) {
             if (func.isStatic()) {
                 String[] parts = func.getName().split("\\.");
                 String className = parts[0];

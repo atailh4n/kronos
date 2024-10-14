@@ -1,2 +1,1 @@
 LogFactory.Log(1234);
-ThisIsFunctionName(1234);

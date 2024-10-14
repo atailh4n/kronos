@@ -17,7 +17,6 @@
 
 # IntelliJ IDEA
 .idea/
-*.iml
 out/
 
 # NetBeans
@@ -46,6 +45,5 @@ dependency-reduced-pom.xml
 
 # Gradle
 .gradle/
-build/
 *.gradle
 *.gradle.kts
