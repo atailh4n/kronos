@@ -1,0 +1,51 @@
+# Derleme çıktıları
+/bin/
+/build/
+/out/
+
+# IDE dosyaları
+*.idea/
+*.iml
+*.classpath
+*.project
+/.settings/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+
+# Diğer geçici dosyalar
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+*.jar
+*.war
+*.ear
+*.class
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle/
+build/
+*.gradle
+*.gradle.kts
