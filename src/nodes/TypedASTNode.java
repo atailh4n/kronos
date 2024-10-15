@@ -1,9 +1,9 @@
-package parser;
+package nodes;
 
 // TypedASTNode.java
 public abstract class TypedASTNode extends ASTNode {
     public enum Type {
-        INTEGER, FUNCTION_CALL, STRING
+        Int, String, Arguments, Array
     }
 
     public abstract Type getType();

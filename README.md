@@ -1,6 +1,7 @@
 # Kronos - Java ile yazılmış yorumlayıcılı dil
 
-Kronos, Ata İlhan Köktürk tarafından geliştirilen kendi yazılım dili ve yorumlayıcısı olan bir projedir. Bu proje, kullanıcıların kendi kodlarını yazmalarını ve
+Kronos, Ata İlhan Köktürk tarafından geliştirilen kendi yazılım dili ve yorumlayıcısı olan bir projedir. Bu proje,
+kullanıcıların kendi kodlarını yazmalarını ve
 çalıştırmalarını sağlayan bir yapı sunmaktadır. Kronos, **Async** dilini temel alarak, programlamayı öğrenmeyi ve
 uygulamayı kolaylaştırmayı hedefler. Proje halen geliştirilme aşamasındadır.
 
@@ -36,7 +37,9 @@ uygulamayı kolaylaştırmayı hedefler. Proje halen geliştirilme aşamasındad
 Kronos dilinde yazılmış bir kodu çalıştırmak için, bir .krnos dosyası oluşturun ve örnek kodu yazın:
 
   ```krnos
-  LogFactory.Log(1234);
+   depends kronos.ConsoleLogFactory.Log;
+
+   ConsoleLogFactory.Log(1234);
   ```
 
 Bu kodu çalıştırmak için buildden sonra aşağıdaki komutu kullanın:

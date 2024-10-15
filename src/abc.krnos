@@ -1,1 +1,3 @@
-LogFactory.Log(1234);
+depends kronos.ConsoleLogFactory.Log;
+
+ConsoleLogFactory.Log(1234);

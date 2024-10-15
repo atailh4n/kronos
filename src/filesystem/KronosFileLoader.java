@@ -1,4 +1,4 @@
-package parser;
+package filesystem;
 
 import java.nio.file.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package parser;
+package nodes;
 
 public class NumberNode extends ASTNode {
     private final String value;

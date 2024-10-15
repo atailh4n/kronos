@@ -1,7 +1,7 @@
 import interpreter.Interpreter;
 import lexer.Lexer;
 import lexer.Token;
-import parser.ASTNode;
+import nodes.ASTNode;
 import parser.Parser;
 
 import java.io.IOException;
@@ -11,10 +11,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.out.println("Enter a file name please.");
+        if (args.length == 0 || "--help".equals(args[0])) {
+            System.out.println("Usage: kronos [options] <source-file>");
             return;
         }
+        if ("--version".equals(args[0])) {
+            System.out.println("Kronos Version 1.0");
+            return;
+        }
+
 
         String fileName = args[0];
         try {

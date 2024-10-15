@@ -1,4 +1,4 @@
-package parser;
+package nodes;
 
 public class IntegerNode extends TypedASTNode {
     public final int value;
@@ -9,7 +9,7 @@ public class IntegerNode extends TypedASTNode {
 
     @Override
     public Type getType() {
-        return Type.INTEGER;
+        return Type.Int;
     }
 
     @Override
