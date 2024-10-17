@@ -1,19 +1,21 @@
 package nodes;
 
+import java.util.List;
+
 public class CombinedNode extends ASTNode {
-    private final ASTNode dependsNode;
-    private final ASTNode functionCallNode;
+    private final List<ASTNode> dependsNodes;
+    private final List<ASTNode> functionNodes;
 
-    public CombinedNode(ASTNode dependsNode, ASTNode functionCallNode) {
-        this.dependsNode = dependsNode;
-        this.functionCallNode = functionCallNode;
+    public CombinedNode(List<ASTNode> dependsNodes, List<ASTNode> functionNodes) {
+        this.dependsNodes = dependsNodes;
+        this.functionNodes = functionNodes;
     }
 
-    public ASTNode getDependsNode() {
-        return dependsNode;
+    public List<ASTNode> getDependsNodes() {
+        return dependsNodes;
     }
 
-    public ASTNode getFunctionCallNode() {
-        return functionCallNode;
+    public List<ASTNode> getFunctionNodes() {
+        return functionNodes;
     }
 }

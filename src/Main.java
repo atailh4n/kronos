@@ -20,7 +20,6 @@ public class Main {
             return;
         }
 
-
         String fileName = args[0];
         try {
             String code = Files.readString(Path.of(fileName));
@@ -29,9 +28,11 @@ public class Main {
             Lexer lexer = new Lexer(code);
             List<Token> tokens = lexer.tokenize();
 
+            // AST oluştur
             Parser parser = new Parser(tokens);
-            ASTNode ast = parser.parse();
+            ASTNode ast = parser.parse();  // Artık tek bir ASTNode dönüyor
 
+            // AST'yi çalıştır
             Interpreter interpreter = new Interpreter();
             interpreter.interpret(ast);
 
@@ -40,6 +41,7 @@ public class Main {
             System.err.println("Error while reading file: " + e.getMessage());
         } catch (Exception e) {
             System.err.println("Kronos Runtime Error: " + e.getMessage());
+            e.printStackTrace();  // Hata ayıklama için
         }
     }
 }

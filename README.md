@@ -37,7 +37,7 @@ uygulamayı kolaylaştırmayı hedefler. Proje halen geliştirilme aşamasındad
 Kronos dilinde yazılmış bir kodu çalıştırmak için, bir .krnos dosyası oluşturun ve örnek kodu yazın:
 
   ```krnos
-   depends kronos.ConsoleLogFactory.Log;
+   depends kronos.LogFactory.Log;
 
    ConsoleLogFactory.Log(1234);
   ```

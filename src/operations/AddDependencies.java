@@ -3,22 +3,28 @@ package operations;
 import nodes.ASTNode;
 
 public class AddDependencies extends ASTNode {
-    private final String name;
-    private final String fnName;
+    private final String packageName;
+    private final String className;
+    private final String methodName;
     private final String path;
 
-    public AddDependencies(String name, String fnName, String path) {
-        this.name = name;
-        this.fnName = fnName;
+    public AddDependencies(String packageName, String className, String methodName, String path) {
+        this.packageName = packageName;
+        this.className = className;
+        this.methodName = methodName;
         this.path = path;
     }
 
-    public String getName() {
-        return name;
+    public String getPackageName() {
+        return packageName;
     }
 
-    public String getFnName() {
-        return fnName;
+    public String getClassName() {
+        return className;
+    }
+
+    public String getMethodName() {
+        return methodName;
     }
 
     public String getPath() {
@@ -27,10 +33,11 @@ public class AddDependencies extends ASTNode {
 
     @Override
     public String toString() {
-        return "AddDependency{" +
-                "name='" + name + '\'' +
+        return "Dependency{" +
+                "packageName='" + packageName + '\'' +
+                ", className=" + className +
+                ", methodName=" + methodName +
                 ", path=" + path +
-                ", fnName=" + fnName +
                 '}';
     }
 }

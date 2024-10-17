@@ -8,7 +8,6 @@ import nodes.NumberNode;
 import operations.AddDependencies;
 import operations.FunctionCall;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,16 +20,27 @@ public class Parser {
     }
 
     public ASTNode parse() {
-        ASTNode dependsNode = parseDepends();
-        ASTNode functionCallNode = parseFunctionCall();
-        if (dependsNode != null && functionCallNode != null) {
-            return new CombinedNode(dependsNode, functionCallNode);
-        } else if (dependsNode != null) {
-            return dependsNode;
-        } else {
-            return functionCallNode;
+        List<ASTNode> dependsNodes = new ArrayList<>();
+        List<ASTNode> functionNodes = new ArrayList<>();
+
+        while (currentIndex < tokens.size() && tokens.get(currentIndex).type == Token.TokenType.DEPENDS) {
+            dependsNodes.add(parseDepends());
         }
+
+        // Fonksiyon çağrısını işle
+        if (currentIndex < tokens.size()) {
+            ASTNode functionCallNode = parseFunctionCall();
+            if (functionCallNode != null) {
+                functionNodes.add(functionCallNode);
+            }
+        }
+
+        // CombinedNode ile iki listeyi birleştir ve döndür
+        return new CombinedNode(dependsNodes, functionNodes);
     }
+
+
+
 
     private ASTNode parseDepends() {
         if (currentIndex >= tokens.size()) {
@@ -69,7 +79,7 @@ public class Parser {
         if (currentIndex >= tokens.size() || tokens.get(currentIndex).type != Token.TokenType.IDENTIFIER && tokens.get(currentIndex).type != Token.TokenType.DEPENDS_ALL) {
             throw new RuntimeException("Expected IDENTIFIER or DEPENDS_ALL after '.', found: " + (currentIndex < tokens.size() ? tokens.get(currentIndex).value : "EOF"));
         }
-        String functionName = tokens.get(currentIndex).value;
+        String methodName = tokens.get(currentIndex).value;
         currentIndex++;
 
         if (currentIndex >= tokens.size() || tokens.get(currentIndex).type != Token.TokenType.SEMICOLON) {
@@ -77,7 +87,7 @@ public class Parser {
         }
         currentIndex++;
 
-        return new AddDependencies(packageName, functionName, packageName+"."+className);
+        return new AddDependencies(packageName, className, methodName, packageName + "." + className);
     }
 
     private ASTNode parseFunctionCall() {
